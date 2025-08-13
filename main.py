@@ -1,13 +1,10 @@
-def numberOfBites(n):
-    ones = 0
-    zeroes = 0
-    while (n):
-        if {n & 1 == 1}:
-            ones += 1 
-        else:
-            zeroes += 1
-        n >>= 1
-    print("number of ones =", ones, "\nNumbers of zeroes =" ,zeroes)
+def checkIfSame(number1, number2):
+    if((number1 ^ number2)!= 0):
+        print("number are not equal")
 
-number = int(input("enter your number"))
-numberOfBites(number)
+    else:
+        print("number are equal")
+
+number1 = int(input("enter first num to compare"))
+number2 = int(input("enter seconde num to compare"))
+checkIfSame(number1, number2)
