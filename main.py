@@ -1,10 +1,11 @@
-def checkIfSame(number1, number2):
-    if((number1 ^ number2)!= 0):
-        print("number are not equal")
+def power2(number):
+    if number <= 0:
+        return False
+    return (number &(number - 1)) == 0
 
-    else:
-        print("number are equal")
-
-number1 = int(input("enter first num to compare"))
-number2 = int(input("enter seconde num to compare"))
-checkIfSame(number1, number2)
+n = int(input("enter a number"))
+if power2(n):
+    print("\nthe poweris the a power of 2")
+else:
+    print("\nis not power of two")
+    
