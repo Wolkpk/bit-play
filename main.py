@@ -1,11 +1,16 @@
-def power2(number):
-    if number <= 0:
-        return False
-    return (number &(number - 1)) == 0
+def script(a,b):
 
-n = int(input("enter a number"))
-if power2(n):
-    print("\nthe poweris the a power of 2")
-else:
-    print("\nis not power of two")
-    
+    a = a^b
+    b = a^b
+    a = a^b
+    print("after swaping: a =",a,"and b =",b)
+
+
+def swap2(a,b):
+    a = (a&b)+(a|b)
+    b = a+(~b)+1
+    a = a+(~b)+1
+    print("after swaping: a =",a,"and b =",b)
+
+script(10,20)
+swap2(4,5)
