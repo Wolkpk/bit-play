@@ -1,16 +1,13 @@
-def script(a,b):
+import random
 
-    a = a^b
-    b = a^b
-    a = a^b
-    print("after swaping: a =",a,"and b =",b)
-
-
-def swap2(a,b):
-    a = (a&b)+(a|b)
-    b = a+(~b)+1
-    a = a+(~b)+1
-    print("after swaping: a =",a,"and b =",b)
-
-script(10,20)
-swap2(4,5)
+def pickaball():
+    balls = ["red", "green", "blue"]
+    prob_red = balls.count("red") / len(balls)
+    print("the probability of picking a red ball is:", round(prob_red,2))
+    result = random.choice(balls)
+    print("the random ball picked is:", result)
+    if result == "red":
+        print("you win, red ball picked")
+    else:
+        print("you lose, try again")
+pickaball()
