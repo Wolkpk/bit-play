@@ -1,13 +1,31 @@
-import random
+def a_and_b(a, b):
 
-def pickaball():
-    balls = ["red", "green", "blue"]
-    prob_red = balls.count("red") / len(balls)
-    print("the probability of picking a red ball is:", round(prob_red,2))
-    result = random.choice(balls)
-    print("the random ball picked is:", result)
-    if result == "red":
-        print("you win, red ball picked")
-    else:
-        print("you lose, try again")
-pickaball()
+    if a == 1:
+        prob_student = 0.3
+        if b == 1:
+            prob_dining = 0.75
+        else:
+            prob_dining = 0.25
+        print("Probability of a given b:", prob_dining)
+
+    if a == 2:
+        prob_student = 0.7
+        if b == 1:
+            prob_dining = 0.6
+        else:
+            prob_dining = 0.4
+        print("Probability of a given b:", prob_dining)
+
+    prob_a_and_b = prob_student * prob_dining
+    return round(prob_a_and_b, 3)
+
+
+print("Check the probability of any event occuring. First enter your choices.")
+
+print("Is the student a Freshman?\n1. Yes \n2. No")
+a = int(input("Enter your choice (1/2): "))
+
+print("Is student eating in dining hall?\n1. Yes \n2. No")
+b = int(input("Enter your choice (1/2): "))
+
+print("Probability of A and B:", a_and_b(a, b))
