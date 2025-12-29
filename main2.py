@@ -1,23 +1,9 @@
-def prob_a_and_b(a, b, total):
-
-    # probability of event a
-    prob_a = a / total
-
-    # probability of event b
-    prob_bga = b / (total - 1)
-
-    # probability of intersection of events a and b
-    prob_AandB = prob_a * prob_bga
-
-    # return result
-    return round(prob_AandB, 3)
-
-
-# taking input for total number of orange and blue balls
-a = int(input("Enter number of orange balls: "))
-b = int(input("Enter number of blue balls: "))
-total = a + b
-
-# call function for final result
-print("Probability of Getting 1st orange and 2nd blue ball:")
-print(prob_a_and_b(a, b, total))
+prob_st = 0.2
+prob_st_pos = 0.2 * 0.85
+prob_nst_pos = 0.8 * 0.02
+prob_positive = prob_st_pos + prob_nst_pos
+prob_pos_given_st = 0.85
+prob_st_given_positive = (prob_st * prob_pos_given_st) / prob_positive
+print(
+    "Probability of person testing positive having step throat is:",
+    round(prob_st_given_positive, 3))

@@ -1,31 +1,35 @@
-def a_and_b(a, b):
-
+def find_prob(a, b):
     if a == 1:
-        prob_student = 0.3
+        prob_a = 0.2
         if b == 1:
-            prob_dining = 0.75
+            prob_b_given_a = 0.85
+        elif b == 2:
+            prob_b_given_a = 0.15
         else:
-            prob_dining = 0.25
-        print("Probability of a given b:", prob_dining)
-
-    if a == 2:
-        prob_student = 0.7
+            print("Invalid Choice")
+        print(prob_b_given_a)
+        prob_a_and_b = prob_a*prob_b_given_a
+        print(prob_a_and_b)
+    elif a == 2:
+        prob_a = 0.8
         if b == 1:
-            prob_dining = 0.6
+            prob_b_given_a = 0.02
+        elif b == 2:
+            prob_b_given_a = 0.98
         else:
-            prob_dining = 0.4
-        print("Probability of a given b:", prob_dining)
+            print("Invalid Choice")
+        print(prob_b_given_a)
+        prob_a_and_b = prob_a*prob_b_given_a
+        print(prob_a_and_b)
 
-    prob_a_and_b = prob_student * prob_dining
-    return round(prob_a_and_b, 3)
+print("Person has step throat? \n 1. Yes \n 2. No")
 
-
-print("Check the probability of any event occuring. First enter your choices.")
-
-print("Is the student a Freshman?\n1. Yes \n2. No")
 a = int(input("Enter your choice (1/2): "))
 
-print("Is student eating in dining hall?\n1. Yes \n2. No")
+print("Person has tested positive? \n 1. Yes \n 2. No")
+
 b = int(input("Enter your choice (1/2): "))
 
-print("Probability of A and B:", a_and_b(a, b))
+print("Probabilities for event a and b:")
+
+find_prob(a,b)
