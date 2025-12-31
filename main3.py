@@ -1,12 +1,9 @@
-import numpy as np
+import scipy.stats as stats
 
-# create 6 sided "die"
-die_sides = int(input("Enter number of sides for dice (6/12): "))
-die = range(1, die_sides + 1)
+prob1 = 1 - stats.poisson.cdf(20, 15)
 
-# set number of rolls
-num_rolls = int(input("Enter number of times you want to roll the dice: "))
+print(prob1)
 
-# roll the die the set amount of times
-results = np.random.choice(die, size=num_rolls, replace=True)
-print(results)
+prob2 = stats.poisson.cdf(21, 15) - stats.poisson.cdf(16, 15)
+
+print(prob2)

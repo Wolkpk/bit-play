@@ -1,9 +1,11 @@
-prob_st = 0.2
-prob_st_pos = 0.2 * 0.85
-prob_nst_pos = 0.8 * 0.02
-prob_positive = prob_st_pos + prob_nst_pos
-prob_pos_given_st = 0.85
-prob_st_given_positive = (prob_st * prob_pos_given_st) / prob_positive
-print(
-    "Probability of person testing positive having step throat is:",
-    round(prob_st_given_positive, 3))
+import scipy.stats as stats
+
+prob1 = stats.poisson.pmf(6, 10)
+print("probability of raining for exactly 6 days:", prob1)
+
+prob2 = (
+    stats.poisson.pmf(12, 10)
+    + stats.poisson.pmf(13, 10)
+    + stats.poisson.pmf(14, 10)
+)
+print("probability of raining for 12–14 days:", prob2)
